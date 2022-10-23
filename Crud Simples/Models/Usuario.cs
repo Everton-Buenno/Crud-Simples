@@ -2,7 +2,7 @@
 
 namespace Crud_Simples.Models
 {
-    public class Usuarios
+    public class Usuario
     {
         [Key]
         public int Id { get; set; }
