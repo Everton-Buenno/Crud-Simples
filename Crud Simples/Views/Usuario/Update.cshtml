@@ -1,0 +1,48 @@
+﻿@model Crud_Simples.Models.Usuario
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Atualizar Registro</h3>
+            <form asp-action="Update" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Nome">Name *</label>
+                    <input type="text" class="form-control" asp-for="Nome" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sobrenome">Sobrenome *</label>
+                    <input type="text" class="form-control" asp-for="Sobrenome" />
+                    <span asp-validation-for="Sobrenome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Idade">Idade *</label>
+                    <input type="number" class="form-control" asp-for="Idade" />
+                    <span asp-validation-for="Idade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email *</label>
+                    <input type="text" class="form-control" asp-for="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                @if (TempData["msg"] != null)
+                {
+                    <div class="form-group">
+                        @TempData["msg"]
+                    </div>
+                }
+                <div class="form-group pt-3">
+                    <button type="submit" class="btn btn-dark">Save</button>
+                    <a href="/Usuario/ListUser" class="btn btn-primary">List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

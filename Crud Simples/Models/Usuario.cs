@@ -18,12 +18,13 @@ namespace Crud_Simples.Models
         public string Sobrenome { get; set; }
 
         [Column]
+        [Required(ErrorMessage ="A idade é obrigatoria!")]
         [Range(1,199, ErrorMessage ="Idade não permitida")]
         public string Idade { get; set; }
 
         [Column(TypeName ="nvarchar(40)")]
         [Required(ErrorMessage = "O email é obrigatorio!")]
-        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage ="Formato de email invalido!")]
         public string Email { get; set; }
     }
 }

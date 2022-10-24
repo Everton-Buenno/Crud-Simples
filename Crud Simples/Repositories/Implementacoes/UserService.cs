@@ -39,6 +39,7 @@ namespace Crud_Simples.Repositories.Implementacoes
                 if(data == null)
                     return false;
                 context.Usuarios.Remove(data);
+                context.SaveChanges();
                 return true;
             }catch(Exception Exception)
             {
